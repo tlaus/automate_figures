@@ -1,0 +1,25 @@
+\documentclass[paper=a4,parskip=half,headings=normal]{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} 
+\usepackage[english]{babel} 
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[caption = false]{subfig}
+
+\immediate\write18{set R\_LIBS=R\_LIBS\_USER}
+\immediate\write18{Rscript ..\\R\\automatesuppfiguresuniversal.R}
+
+%\immediate\write18{Rscript -e ".libPaths()"}
+
+
+%--------------------------------------
+
+\begin{document}
+\chapter{Random chapter name}
+
+Here is a text in this chapter. It is absolutely inconsequential what I write here. I just need to test if I can add my supplemental figures \textit{after} this chapter.
+
+\include{supplementary_figures.tex}
+
+\end{document}
